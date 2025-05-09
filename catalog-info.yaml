@@ -1,4 +1,16 @@
 apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: album-service-grpc
+  description: "gRPC API for albums"
+spec:
+  type: grpc
+  lifecycle: production
+  owner: "group:default/content"
+  definition:
+    $text: ./src/main/proto/album.proto
+---
+apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: album-service
@@ -19,3 +31,5 @@ spec:
   lifecycle: experimental
   owner: "group:default/content"
   system: "system:default/metadata"
+  providesApis:
+    - album-service-grpc
