@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.spotify.demo.album.proto";
+option java_outer_classname = "AlbumProto";
+
+service AlbumService {
+  rpc GetAlbums (GetAlbumsRequest) returns (GetAlbumsResponse) {}
+  rpc AddAlbums (AddAlbumsRequest) returns (AddAlbumsResponse) {}
+  rpc RemoveAlbums (RemoveAlbumsRequest) returns (RemoveAlbumsResponse) {}
+}
+
+message GetAlbumsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+
+  // allow looking up albums by one or more fields - if left blank will return all albums
+  repeated string ids = 3;
+  repeated string names = 4;
+  repeated string artist_ids = 5;
+}
+
+message GetAlbumsResponse {
+  string next_page_token = 1;
+  repeated Album albums = 2;
+}
+
+message AddAlbumsRequest {
+  repeated Album albums = 1;
+}
+
+message AddAlbumsResponse {}
+
+message RemoveAlbumsRequest {
+  repeated string ids = 1;
+}
+
+message RemoveAlbumsResponse {}
+
+message Album {
+  string id = 1;
+  string title = 2;
+  int32 total_tracks = 3;
+  int32 duration = 4;
+  string release_date = 5;
+  string label = 6;
+  repeated string artist_ids = 7;
+}
