@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: album-service
+  description: "gRPC service for albums"
+  tags:
+    - java
+    - grpc
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: spotify-portal-public-demo/album-service
+    sonarqube.org/project-key: spotify-portal-public-demo_album-service
+    grafana/dashboard-selector: album-service
+    backstage.io/kubernetes-id: album-service
+    backstage.io/kubernetes-namespace: album-service
+    backstage.io/kubernetes-label-selector: app=album-service
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/content"
+  system: "system:default/metadata"

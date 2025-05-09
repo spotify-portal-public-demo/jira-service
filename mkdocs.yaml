@@ -1,0 +1,8 @@
+site_name: "album-service"
+site_description: "gRPC service for albums"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
