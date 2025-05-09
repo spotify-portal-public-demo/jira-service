@@ -34,3 +34,5 @@ spec:
   system: "system:default/metadata"
   providesApis:
     - album-service-grpc
+  dependsOn:
+    - resource:album-service-db
