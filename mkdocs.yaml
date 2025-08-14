@@ -3,6 +3,7 @@ site_description: "gRPC service for albums"
 
 nav:
   - Introduction: index.md
+  - Schema: schema.md
 
 plugins:
   - techdocs-core
