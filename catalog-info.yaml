@@ -27,6 +27,7 @@ metadata:
     backstage.io/kubernetes-id: album-service
     backstage.io/kubernetes-namespace: album-service
     backstage.io/kubernetes-label-selector: app=album-service
+    jira.com/project-key: INSH
 spec:
   type: service
   lifecycle: production
